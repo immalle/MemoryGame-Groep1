@@ -1,0 +1,23 @@
+Requirements (“eisen van de klant”):
+Een memory-game in een Windows Forms applicatie.
+De speler gaat steeds op zoek naar 2 dezelfde afbeeldingen.
+‘Pool’ van afbeeldingen
+Variabele roostergrootte (afhankelijk van moeilijkheidsgraad)
+b.v. 2x4 : 4 afbeeldingen
+8x8: 32 afbeeldingen
+...
+Willekeurige afbeeldingspositie
+… (de klant weet vaak niet wat hij nog wil, tot hij een eerste resultaat terug krijgt)
+
+Use-cases:
+De speler begint een nieuw spel
+De speler kiest een moeilijkheidsgraad
+De speler kiest 2 verschillende afbeeldingen
+De speler kiest 2 dezelfde afbeeldingen
+De speler krijgt een score (aantal beurten, tijd, …)
+
+Analyse:
+
+Implementatie:
+
+Testen:
