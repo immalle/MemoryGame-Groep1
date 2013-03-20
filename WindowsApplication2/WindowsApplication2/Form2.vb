@@ -10,31 +10,34 @@
         ElseIf Form1.RadioButton3.Checked = True Then
             zetkaarten(8)
         End If
+        Me.Size = New Size(1200, 1200)
 
     End Sub
     Private Sub picutreboxOnMouseEnterEventHandler(sender As Label, e As System.EventArgs)
         sender.BackColor = Color.Red
     End Sub
     Sub zetkaarten(aantal As Integer)
+        Dim prentjes As New List(Of String)
+        prentjes.AddRange(System.IO.Directory.GetFiles("D:\5I\SoftwareOntwikkeling\MemoryGame-Groep1\prentjes"))
+
         For i = 1 To aantal
             For j = 1 To aantal
-
                 Dim pic As New PictureBox()
-                pic.Size = New Size(40, 40)
-                pic.Location = New Point(60 * i, 60 * j)
-                pic.Image = My.Resources._10
-
-
+                pic.Size = New Size(80, 100)
+                pic.Location = New Point(120 * i, 120 * j)
+                pic.BackColor = Color.Transparent
+                pic.AutoSize = True
+                pic.SizeMode = PictureBoxSizeMode.StretchImage
                 Me.Controls.Add(pic)
+                pic.Image = My.Resources._10
 
             Next
         Next
 
     End Sub
 
-    Private Sub pic_Click(sender As Object, e As System.EventArgs) Handles Me.Click
-        sender.backcolor = Color.Red
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        Me.Close()
+        Form1.Close()
     End Sub
-
-
 End Class
