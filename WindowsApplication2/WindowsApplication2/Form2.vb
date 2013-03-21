@@ -27,9 +27,9 @@
                 pic.Location = New Point(120 * i, 120 * j)
                 pic.BackColor = Color.Transparent
                 pic.AutoSize = True
-                pic.SizeMode = PictureBoxSizeMode.StretchImage
                 Me.Controls.Add(pic)
-                pic.Image = My.Resources._10
+                pic.Image = My.Resources.unnamed
+                pic.SizeMode = PictureBoxSizeMode.StretchImage
 
             Next
         Next

@@ -60,9 +60,9 @@ Namespace My.Resources
             End Set
         End Property
         
-        Friend ReadOnly Property _10() As System.Drawing.Bitmap
+        Friend ReadOnly Property unnamed() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_10", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("unnamed", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
