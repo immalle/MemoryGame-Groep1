@@ -1,5 +1,7 @@
-﻿Public Class form2
-
+﻿Imports System.IO
+Public Class form2
+    Public rndgetal As Random
+    Public prentjes As New List(Of String)
 
 
 
@@ -12,14 +14,15 @@
             zetkaarten(8)
         End If
         Me.Size = New Size(1200, 1200)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
 
     End Sub
     Private Sub picutreboxOnMouseEnterEventHandler(sender As Label, e As System.EventArgs)
         sender.BackColor = Color.Red
     End Sub
     Sub zetkaarten(aantal As Integer)
-        Dim prentjes As New List(Of String)
-        prentjes.AddRange(System.IO.Directory.GetFiles("D:\5I\SoftwareOntwikkeling\MemoryGame-Groep1\prentjes"))
+
+        prentjes.AddRange(System.IO.Directory.GetFiles("D:\5I\SoftwareOntwikkeling\MemoryGame-Groep1\prentjes", "*.jpg"))
 
         For i = 1 To aantal
             For j = 1 To aantal
@@ -29,15 +32,26 @@
                 pic.BackColor = Color.Transparent
                 pic.AutoSize = True
                 Me.Controls.Add(pic)
-                pic.Image = My.Resources.unnamed
                 pic.SizeMode = PictureBoxSizeMode.StretchImage
-                'AddHandler pic.Click, AddressOf klikkenopkaart
+                pic.Image = My.Resources.unnamed
+                AddHandler pic.Click, AddressOf klikkenopkaart
             Next
         Next
 
 
     End Sub
+    Sub klikkenopkaart(sender As System.Windows.Forms.PictureBox, e As System.EventArgs)
+        For Each prent In prentjes
+            sender.Image = Image.FromFile((prent.Substring(0)))
+        Next
+    End Sub
 
+   
+
+    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
+        Me.Close()
+        Form1.Close()
+    End Sub
 End Class
 
 
