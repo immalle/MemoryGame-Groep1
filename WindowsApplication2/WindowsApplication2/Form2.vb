@@ -1,6 +1,7 @@
 ﻿Public Class form2
 
-   
+
+
 
     Private Sub form2_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         If Form1.RadioButton1.Checked = True Then
@@ -30,14 +31,15 @@
                 Me.Controls.Add(pic)
                 pic.Image = My.Resources.unnamed
                 pic.SizeMode = PictureBoxSizeMode.StretchImage
-
+                'AddHandler pic.Click, AddressOf klikkenopkaart
             Next
         Next
 
+
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        Me.Close()
-        Form1.Close()
-    End Sub
 End Class
+
+
+
+

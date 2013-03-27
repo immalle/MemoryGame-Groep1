@@ -7,8 +7,11 @@
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         Form2.Show()
     End Sub
-
     
     
 
+    Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        Me.BackgroundImage = My.Resources.images
+
+    End Sub
 End Class
